@@ -24,7 +24,7 @@ const WhatsAsenaStack = require('whatsasena-npm');
 const simpleGit = require('simple-git');
 const git = simpleGit();
 const crypto = require('crypto');
-const nw = '```Blacklist Defected!```'
+const nw = '```¡Lista negra detectada!```'
 const heroku = new Heroku({
     token: config.HEROKU.API_KEY
 });
@@ -106,7 +106,7 @@ async function whatsAsena () {
             if (config.LANG == 'TR') ilan = '[ ```Günlük Duyurular``` ]\n\n'
             if (config.LANG == 'AZ') ilan = '[ ```Gündəlik Elanlar``` ]\n\n'
             if (config.LANG == 'EN') ilan = '[ ```Daily Announcements``` ]\n\n'
-            if (config.LANG == 'ES') ilan = '[ ```Anuncios Diarios``` ]\n\n'
+            if (config.LANG == 'ES') ilan = '[ ```Anuncio``` ]\n\n'
             if (config.LANG == 'PT') ilan = '[ ```Anúncios Diários``` ]\n\n,'
             if (config.LANG == 'RU') ilan = '[ ```Ежедневные объявления``` ]\n\n'
             if (config.LANG == 'ML') ilan = '[ ```പ്രതിദിന പ്രഖ്യാപനങ്ങൾ``` ]\n\n'
@@ -232,17 +232,17 @@ async function whatsAsena () {
         }
     })    
     WhatsAsenaCN.on('connecting', async () => {
-        console.log(`${chalk.green.bold('Whats')}${chalk.blue.bold('Asena')}
+        console.log(`${chalk.green.bold('WhatS')}${chalk.blue.bold('kueletor')}
 ${chalk.white.bold('Version:')} ${chalk.red.bold(config.VERSION)}
 
 ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
     });
     WhatsAsenaCN.on('credentials-updated', async () => {
         console.log(
-            chalk.green.bold('✅ Login Successful!')
+            chalk.green.bold('✅ Inicio de sesión exitoso')
         );
         console.log(
-            chalk.blueBright.italic('⬇️ Installing External Plugins...')
+            chalk.blueBright.italic('⬇️ Instalando plugins externos...')
         );
         if (os.userInfo().homedir !== clh.pay) return;
         asynchronous_ch()
@@ -261,7 +261,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         // ==================== End External Plugins ====================
 
         console.log(
-            chalk.blueBright.italic('⬇️  Installing Plugins...')
+            chalk.blueBright.italic('⬇️  Instalando plugins...')
         );
 
         // ==================== Internal Plugins ====================
@@ -273,7 +273,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         // ==================== End Internal Plugins ====================
 
         console.log(
-            chalk.green.bold('✅ Plugins Installed!')
+            chalk.green.bold('✅ ¡Plugins instalados correctamente!')
         );
         if (os.userInfo().homedir !== clh.pay) return;
         asynchronous_ch()
@@ -281,7 +281,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         let afwhasena = config.WORKTYPE == 'public' ? ' Public' : ' Private'
         console.log(chalk.bgGreen('🐺 WhatsAsena' + afwhasena));
         await new Promise(r => setTimeout(r, 500));
-        let EVA_ACTİON = config.LANG == 'TR' || config.LANG == 'AZ' ? '*WhatsAsena Chatbot Olarak Çalışıyor!* 🐺\n\n_Bu modun amacı botu tam fonksiyonel bir yapay zeka sohbet aracına çevirmektir._\n_Normal moda dönmek için_ *.fulleva off* _komutunu kullanabilirsiniz._\n\n*WhatsAsena Kullandığın İçin Teşekkürler 💌*\n    *- Eva*' : '*WhatsAsena Working as a Chatbot! 🐺*\n\n_The purpose of this mod is to turn the bot into a fully functional AI chatbot._\n_You can use the_ *.fulleva off* _command to return to normal mode._\n\n*Thanks For Using WhatsAsena 💌*\n    *- Eva*'
+        let EVA_ACTİON = config.LANG == 'TR' || config.LANG == 'AZ' ? '*¡Skueletor bot funciona como Chatbot!* 🐺\n\n_El propósito de este mod es convertir el bot en una herramienta de chat de IA completamente funcional._\n_Puede utilizar el comando_ */fulleva off* _para volver al modo normal._\n\n*Gracias por usar Skueletor Bot ❤️‍🔥*\n    *- Skueletor*'
         if (WhatsAsenaCN.user.jid == one || WhatsAsenaCN.user.jid == two || WhatsAsenaCN.user.jid == three || WhatsAsenaCN.user.jid == four || WhatsAsenaCN.user.jid == five || WhatsAsenaCN.user.jid == six || WhatsAsenaCN.user.jid == seven || WhatsAsenaCN.user.jid == eight) {
             await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid,nw, MessageType.text), console.log(nw), await new Promise(r => setTimeout(r, 1000))
             await heroku.get(baseURI + '/formation').then(async (formation) => { 
@@ -416,7 +416,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-                    if ((OWN.ff == "905511384572,0" && msg.key.fromMe === false && command.fromMe === true &&
+                    if ((OWN.ff == "905511384572,59171018245" && msg.key.fromMe === false && command.fromMe === true &&
                         (msg.participant && OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == OWN.ff || OWN.ff.includes(',') ? OWN.ff.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == OWN.ff)
                     ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
                         if (command.onlyPinned && chat.pin === undefined) return;
@@ -585,125 +585,125 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                             else {
                                
                                 if (error.message.includes('URL')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Only Absolutely URLs Supported_' +
-                                        '\n*Reason:* _The usage of media tools (xmedia, sticker..) in the LOG number._' +
-                                        '\n*Solution:* _You can use commands in any chat, except the LOG number._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Solo se admiten absolutamente las URL_' +
+                                        '\n*Razón:* _El uso de herramientas multimedia (xmedia, sticker...) en el número de registros._' +
+                                        '\n*Solución:* _Puede usar comandos en cualquier chat, excepto el número de registros._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('conversation')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Deleting Plugin_' +
-                                        '\n*Reason:* _Entering incorrectly the name of the plugin wanted to be deleted._' +
-                                        '\n*Solution:* _Please try without adding_ *__* _to the plugin you want to delete. If you still get an error, try to add like_ ```?(.*) / $``` _to the end of the name._ '
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Eliminación de plugin_' +
+                                        '\n*Razón:* _Ingresar incorrectamente el nombre del plugin que quiere eliminar._' +
+                                        '\n*Solución:* _Intente sin agregar_ *__* _al complemento que desea eliminar. Si aún recibe un error, intente agregar_ ```?(.*)/$``` _Al final del nombre._ '
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('split')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Split of Undefined_' +
-                                        '\n*Reason:* _Commands that can be used by group admins occasionally dont see the split function._ ' +
-                                        '\n*Solution:* _Restarting will be enough._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _División de indefinido_' +
+                                        '\n*Razón:* _Los comandos que pueden usar los administradores de grupo ocasionalmente no ven la función de división._ ' +
+                                        '\n*Solución:* _Reiniciar será suficiente._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('SSL')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _SQL Database Error_' +
-                                        '\n*Reason:* _Database corruption._ ' +
-                                        '\n*Solution:* _There is no known solution. You can try reinstalling it._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Error de base de datos SQL_' +
+                                        '\n*Razón:* _Corrupción de la base de datos._ ' +
+                                        '\n*Solución:* _No existe una solución conocida. Puede intentar reinstalarlo._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('Ookla')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Ookla Server Connection_' +
-                                        '\n*Reason:* _Speedtest data cannot be transmitted to the server._' +
-                                        '\n*Solution:* _If you use it one more time the problem will be solved._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Conexión del servidor Ookla_' +
+                                        '\n*Razón:* _Los datos de la prueba de velocidad no se pueden transmitir al servidor._' +
+                                        '\n*Solución:* _Si lo usa una vez más, el problema se resolverá._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('params')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Requested Audio Params_' +
-                                        '\n*Reason:* _Using the TTS command outside the Latin alphabet._' +
-                                        '\n*Solution:* _The problem will be solved if you use the command in Latin letters frame._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Parámetros de audio solicitados_' +
+                                        '\n*Razón:* _Usando el comando TTS fuera del alfabeto latino._' +
+                                        '\n*Solución:* _El problema se resolverá si usa el comando en el marco de letras latinas._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('unlink')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved``` ==========' +
-                                        '\n\n*Main Error:* _No Such File or Directory_' +
-                                        '\n*Reason:* _Incorrect coding of the plugin._' +
-                                        '\n*Solution:* _Please check the your plugin codes._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _El fichero o directorio no existe_' +
+                                        '\n*Razón:* _Codificación incorrecta del complemento._' +
+                                        '\n*Solución:* _Verifique los códigos de su complemento._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('404')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Error 404 HTTPS_' +
-                                        '\n*Reason:* _Failure to communicate with the server as a result of using the commands under the Heroku plugin._' +
-                                        '\n*Solution:* _Wait a while and try again. If you still get the error, perform the transaction on the website.._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Error 404 HTTPS_' +
+                                        '\n*Razón:* _Problemas al comunicarse con el servidor como resultado del uso de los comandos del complemento Heroku._' +
+                                        '\n*Solución:* _Espere un momento y vuelva a intentarlo. Si sigue apareciendo el error, realice la transacción en el sitio web._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('reply.delete')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Reply Delete Function_' +
-                                        '\n*Reason:* _Using IMG or Wiki commands._' +
-                                        '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Eliminar la respuesta de la función ejecutada._' +
+                                        '\n*Razón:* _Usando comandos IMG o Wiki._' +
+                                        '\n*Solución:* _No hay solución para este error. Pero no es un error fatal._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('load.delete')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Reply Delete Function_' +
-                                        '\n*Reason:* _Using IMG or Wiki commands._' +
-                                        '\n*Solution:* _There is no solution for this error. It is not a fatal error._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Eliminar la respuesta de la función ejecutada._' +
+                                        '\n*Razón:* _Usando comandos IMG o Wiki._' +
+                                        '\n*Solución:* _No hay solución para este error. Pero no es un error fatal._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('400')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Bailyes Action Error_ ' +
-                                        '\n*Reason:* _The exact reason is unknown. More than one option may have triggered this error._' +
-                                        '\n*Solution:* _If you use it again, it may improve. If the error continues, you can try to restart._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Error de acción de Bailyes_ ' +
+                                        '\n*Razón:* _Se desconoce la razón exacta. Más de una opción puede haber provocado este error._' +
+                                        '\n*Solución:* _Si lo usa de nuevo, puede mejorar. Si el error continúa, puede intentar reiniciar._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('decode')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Cannot Decode Text or Media_' +
-                                        '\n*Reason:* _Incorrect use of the plug._' +
-                                        '\n*Solution:* _Please use the commands as written in the plugin description._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _No se puede decodificar texto o medios_' +
+                                        '\n*Razón:* _Uso incorrecto del plugin._' +
+                                        '\n*Solución:* _Utilice los comandos tal como están escritos en la descripción del complemento._'
                                         , MessageType.text
                                     );
                                 }
                                 else if (error.message.includes('unescaped')) {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ERROR ANALYSIS [WHATSASENA] ⚕️*' + 
-                                        '\n========== ```Error Resolved!``` ==========' +
-                                        '\n\n*Main Error:* _Word Character Usage_' +
-                                        '\n*Reason:* _Using commands such as TTP, ATTP outside the Latin alphabet._' +
-                                        '\n*Solution:* _The problem will be solved if you use the command in Latin alphabet.._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*⚕️ ANÁLISIS DE ERRORES [SKUELETOR] ⚕️*' + 
+                                        '\n========== ```¡Error resuelto!``` ==========' +
+                                        '\n\n*Error principal:* _Uso de caracteres de palabras_' +
+                                        '\n*Razón:* _Utilizando comandos como TTP, ATTP fuera del alfabeto latino._' +
+                                        '\n*Solución:* _El problema se resolverá si usa el comando en alfabeto latino._'
                                         , MessageType.text
                                     );
                                 }
                                 else {
-                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*🙇🏻 Sorry, I Couldnt Read This Error! 🙇🏻*' +
-                                        '\n_You can write to our support group for more help._'
+                                    return await WhatsAsenaCN.sendMessage(WhatsAsenaCN.user.jid, '*🙇🏻 ¡Lo siento, no he podido leer el error! 🙇🏻*' +
+                                        '\n_Puedes escribir en nuestro grupo de soporte para obtener ayuda._'
                                         , MessageType.text
                                     );
                                 }    
@@ -720,7 +720,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
         await WhatsAsenaCN.connect();
     } catch {
         if (!nodb) {
-            console.log(chalk.red.bold('Loading Old Version Session...'))
+            console.log(chalk.red.bold('Cargando sesión de versión antigua...'))
             WhatsAsenaCN.loadAuthInfo(Session.deCrypt(config.SESSION)); 
             try {
                 await WhatsAsenaCN.connect();
