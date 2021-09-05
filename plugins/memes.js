@@ -1,8 +1,6 @@
 /* Copyright (C) 2020 Yusuf Usta.
-
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
-
 WhatsAsena - Yusuf Usta
 Coded by @KursadHD
 */
@@ -18,14 +16,14 @@ const Lang = Language.getString('memes');
 
 if (Config.WORKTYPE == 'private') {
 
-    Asena.addCommand({pattern: 'meme ?(.*)', fromMe: true, desc: Lang.MEMES_DESC}, (async (message, match) => {   
+    Asena.addCommand({pattern: 'edit ?(.*)', fromMe: true, desc: Lang.MEMES_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
         var topText, bottomText;
         if (match[1].includes(';')) {
             var split = match[1].split(';');
-            topText = split[1];
-            bottomText = split[0];
+            topText = split[0];
+            bottomText = split[1];
         }
 	    else {
             topText = match[1];
@@ -44,26 +42,26 @@ if (Config.WORKTYPE == 'private') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'asena-meme.png',
+            outfile: 'skuel-meme.png',
             topText: topText,
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('asena-meme.png'), MessageType.image, {filename: 'asena-meme.png', mimetype: Mimetype.png, caption: 'Made by WhatsAsena'});
+            await message.client.sendMessage(message.jid, fs.readFileSync('skuel-meme.png'), MessageType.image, {filename: 'skuel-meme.png', mimetype: Mimetype.png, caption: 'Hecho por *Skueletor*'});
             await info.delete();    
         });
     }));
 }
 else if (Config.WORKTYPE == 'public') {
 
-    Asena.addCommand({pattern: 'meme ?(.*)', fromMe: false, desc: Lang.MEMES_DESC}, (async (message, match) => {    
+    Asena.addCommand({pattern: 'edit ?(.*)', fromMe: false, desc: Lang.MEMES_DESC}, (async (message, match) => {    
 
         if (message.reply_message === false) return await message.client.sendMessage(message.jid,Lang.NEED_REPLY, MessageType.text);
         var topText, bottomText;
         if (match[1].includes(';')) {
             var split = match[1].split(';');
-            topText = split[1];
-            bottomText = split[0];
+            topText = split[0];
+            bottomText = split[1];
         }
 	    else {
             topText = match[1];
@@ -82,12 +80,12 @@ else if (Config.WORKTYPE == 'public') {
     
 	    memeMaker({
             image: location,         
-            outfile: 'asena-meme.png',
+            outfile: 'skuel-meme.png',
             topText: topText,
             bottomText: bottomText,
         }, async function(err) {
             if(err) throw new Error(err)
-            await message.client.sendMessage(message.jid, fs.readFileSync('asena-meme.png'), MessageType.image, {filename: 'asena-meme.png', mimetype: Mimetype.png, caption: 'Made by WhatsAsena'});
+            await message.client.sendMessage(message.jid, fs.readFileSync('skuel-meme.png'), MessageType.image, {filename: 'skuel-meme.png', mimetype: Mimetype.png, caption: 'Hecho por *Skueletor*'});
             await info.delete();    
         });
     }));
