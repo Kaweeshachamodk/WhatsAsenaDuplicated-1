@@ -55,7 +55,7 @@ function webp2mp4File(path) {
                 const result = 'https:' + $('div#output > p.outfile > video > source').attr('src')
                 resolve({
                     status: true,
-                    message: "Made by WhatsAsena",
+                    message: "Hecho por *Skueletor*",
                     result: result
                 })
             }).catch(reject)
@@ -105,7 +105,7 @@ if (Config.WORKTYPE == 'private') {
             });
         return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    Asena.addCommand({pattern: 'vsticker$', desc: Lang.ANİM_STİCK, fromMe: true}, (async (message, match) => {
+    Asena.addCommand({pattern: 'videosticker$', desc: Lang.ANİM_STİCK, fromMe: true}, (async (message, match) => {
         const mid = message.jid
         if (message.reply_message === false) return await message.sendMessage(Lang.STİCKER_NEEDREPLY);
         await message.client.sendMessage(mid, Lang.ANİMATE, MessageType.text)
@@ -120,7 +120,7 @@ if (Config.WORKTYPE == 'private') {
             await Axios({ method: "GET", url: rest.result, responseType: "stream"}).then(({ data }) => {
                 const saving = data.pipe(fs.createWriteStream('/root/WhatsAsenaDuplicated/stweb.mp4'))
                 saving.on("finish", async () => {
-                    await message.client.sendMessage(mid, fs.readFileSync('/root/WhatsAsenaDuplicated/stweb.mp4'), MessageType.video, { mimetype: Mimetype.mp4, caption: 'Made by WhatsAsena', quoted: message.data })
+                    await message.client.sendMessage(mid, fs.readFileSync('/root/WhatsAsenaDuplicated/stweb.mp4'), MessageType.video, { mimetype: Mimetype.mp4, caption: 'Hecho por *Skueletor*', quoted: message.data })
                     if (fs.existsSync(savedFilename)) fs.unlinkSync(savedFilename)
                     if (fs.existsSync('/root/WhatsAsenaDuplicated/stweb.mp4')) fs.unlinkSync('/root/WhatsAsenaDuplicated/stweb.mp4')
                 })
@@ -170,7 +170,7 @@ else if (Config.WORKTYPE == 'public') {
             });
         return await message.client.deleteMessage(mid, {id: downloading.key.id, remoteJid: message.jid, fromMe: true})
     }));
-    Asena.addCommand({pattern: 'vsticker$', desc: Lang.ANİM_STİCK, fromMe: false}, (async (message, match) => {
+    Asena.addCommand({pattern: 'videosticker$', desc: Lang.ANİM_STİCK, fromMe: false}, (async (message, match) => {
         const mid = message.jid
         if (message.reply_message === false) return await message.sendMessage(Lang.STİCKER_NEEDREPLY);
         await message.client.sendMessage(mid, Lang.ANİMATE, MessageType.text)
@@ -185,7 +185,7 @@ else if (Config.WORKTYPE == 'public') {
             await Axios({ method: "GET", url: rest.result, responseType: "stream"}).then(({ data }) => {
                 const saving = data.pipe(fs.createWriteStream('/root/WhatsAsenaDuplicated/stweb.mp4'))
                 saving.on("finish", async () => {
-                    await message.client.sendMessage(mid, fs.readFileSync('/root/WhatsAsenaDuplicated/stweb.mp4'), MessageType.video, { mimetype: Mimetype.mp4, caption: 'Made by WhatsAsena', quoted: message.data })
+                    await message.client.sendMessage(mid, fs.readFileSync('/root/WhatsAsenaDuplicated/stweb.mp4'), MessageType.video, { mimetype: Mimetype.mp4, caption: 'Hecho por *Skueletor*', quoted: message.data })
                     if (fs.existsSync(savedFilename)) fs.unlinkSync(savedFilename)
                     if (fs.existsSync('/root/WhatsAsenaDuplicated/stweb.mp4')) fs.unlinkSync('/root/WhatsAsenaDuplicated/stweb.mp4')
                 })
