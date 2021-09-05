@@ -25,7 +25,7 @@ if (Config.LANG == 'TR') description = 'Tüm ttp komutlarını gösterir.', cmd 
 if (Config.LANG == 'AZ') description = 'Bütün ttp əmrlərini göstərir.', cmd = '*Əmr:* ', cmd_desc = '*İzahat:* '
 if (Config.LANG == 'EN') description = 'Shows all ttp commands.', cmd = '*Command:* ', cmd_desc = '*Description:* '
 if (Config.LANG == 'RU') description = 'Показывает все команды ttp.', cmd = '*Команда:* ', cmd_desc = '*Объяснение:* '
-if (Config.LANG == 'ES') description = 'Muestra todos los comandos ttp.', cmd = '*Mando:* ', cmd_desc = '*Explicación:* '
+if (Config.LANG == 'ES') description = 'Muestra todos los comandos ttp.', cmd = '*Comando:* ', cmd_desc = '*Explicación:* '
 if (Config.LANG == 'HI') description = 'सभी ttp कमांड दिखाता है।', cmd = '*आदेश:* ', cmd_desc = '*व्याख्या:* '
 if (Config.LANG == 'ML') description = 'എല്ലാ ttp കമാൻഡുകളും കാണിക്കുന്നു.', cmd = '*കമാൻഡ്:* ', cmd_desc = '*വിശദീകരണം:* '
 if (Config.LANG == 'PT') description = 'Mostra todos os comandos ttp.', cmd = '*Comando:* ', cmd_desc = '*Explicação:* '
@@ -34,14 +34,14 @@ if (Config.LANG == 'ID') description = '*Menampilkan semua perintah ttp.', cmd =
 Asena.addCommand({ pattern: 'allttp$', fromMe: wk, desc: description }, (async (message, match) => {
   var t1 = Lang.TTP_DESC
   var t2 = Lang.ATTP_DESC
-  var t3 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı su temalı sticker'e çevirir." : "Converts text to water-themed sticker."
-  var t4 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı el yazısıyla sticker'e çevirir." : "Converts text to hand writing sticker."
-  var t5 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı blackbird temalı sticker'e çevirir." : "Converts text to blackbird-themed sticker."
-  var t6 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı sakız temalı sticker'e çevirir." : "Converts text to gum-themed sticker."
-  var t7 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı şirinler temalı sticker'e çevirir." : "Converts text to smurfs-themed sticker."
-  var t8 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı elektrik temalı sticker'e çevirir." : "Converts text to electric-themed sticker."
-  var t9 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı vurgulayan animasyonlu sticker'e çevirir." : "Converts text to highlighted animated sticker."
-  var t10 = Config.LANG == 'TR' || Config.LANG == 'AZ' ? "Yazıyı geçiş animasyonlu sticker'e çevirir." : "Converts text to transition animated sticker."
+  var t3 = "Convierte el texto en un sticker con una temática acuática."
+  var t4 = "Convierte el texto en un sticker escrito a mano."
+  var t5 = "Convierte el texto en un sticker con una temática de ave negra."
+  var t6 = "Convierte el texto en un sticker con una temática de chicle."
+  var t7 = "Convierte el texto en un sticker con un tema de los pitufos."
+  var t8 = "Convierte el texto en un sticker con una temática eléctrica."
+  var t9 = "Convierte el texto en un sticker animado resaltado."
+  var t10 = "Convierte el texto en un sticker animado de transición."
   
   var payload = cmd + '.ttp' + '\n' + cmd_desc + t1 + '\n\n' +
     cmd + '.attp' + '\n' + cmd_desc + t2 + '\n\n' +
@@ -61,12 +61,12 @@ Asena.addCommand({ pattern: 'ttp ?(.*)', fromMe: wk, dontAddCommandList: true },
     var text = message.reply_message.text
     var uri = encodeURI(text)
     var ttinullimage = await axios.get('https://api.xteam.xyz/ttp?file&text=' + uri, { responseType: 'arraybuffer' })
-    await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by WhatsAsena' })
+    await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Hecho por *Skueletor*' })
   } else {
     if (match[1] === '') return await message.client.sendMessage(message.jid,Lang.NEED_WORD, MessageType.text);
     var uri = encodeURI(match[1])
     var ttinullimage = await axios.get('https://api.xteam.xyz/ttp?file&text=' + uri, { responseType: 'arraybuffer' })
-    await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Made by WhatsAsena' })
+    await message.client.sendMessage(message.jid,Buffer.from(ttinullimage.data), MessageType.image, { mimetype: Mimetype.jpg, caption: 'Hecho por *Skueletor*' })
   }
 }));
 Asena.addCommand({ pattern: 'attp ?(.*)', fromMe: wk, dontAddCommandList: true }, (async (message, match) => {
