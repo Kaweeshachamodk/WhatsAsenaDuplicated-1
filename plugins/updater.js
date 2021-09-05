@@ -48,7 +48,7 @@ if (Config.LANG == 'TR') Action = '*WhatsAsena Halihazırda Güncelleniyor!*'
 if (Config.LANG == 'AZ') Action = '*WhatsAsena Hal -hazırda Yenilənir!*'
 if (Config.LANG == 'EN') Action = '*WhatsAsena Currently Updating!*'
 if (Config.LANG == 'RU') Action = '*WhatsAsena сейчас обновляется!*'
-if (Config.LANG == 'ES') Action = '*WhatsAsena Actualizando actualmente!*'
+if (Config.LANG == 'ES') Action = '*¡Actualizando el bot Skueletor, espere un momento por favor!*'
 if (Config.LANG == 'PT') Action = '*O WhatsAsena está sendo atualizado no momento!*'
 if (Config.LANG == 'ML') Action = '*WhatsAsena നിലവിൽ അപ്ഡേറ്റ് ചെയ്യുന്നു!*'
 if (Config.LANG == 'HI') Action = '*WhatsAsena वर्तमान में अपडेट हो रहा है!*'
@@ -102,7 +102,7 @@ Asena.addCommand({pattern: 'update now$', fromMe: true, desc: Lang.UPDATE_NOW_DE
                     exec('npm install').stderr.pipe(process.stderr);
                 } else if (err) {
                     await message.client.sendMessage(
-                        message.jid,'*❌ Güncelleme başarısız oldu!*\n*Hata:* ```' + err + '```', MessageType.text);
+                        message.jid,'*❌ ¡Actualización fallida!*\n*Error:* ```' + err + '```', MessageType.text);
                 }
             }));
             await guncelleme.delete();
