@@ -12,7 +12,6 @@ const Language = require('../language')
 const { errorMessage, infoMessage } = require('../helpers')
 const Lang = Language.getString('instagram')
 const Tlang = Language.getString('tiktok')
-const Lang = Language.getString('weather');
 
 if (cn.WORKTYPE == 'private') {
 
@@ -28,7 +27,7 @@ if (cn.WORKTYPE == 'private') {
         const json = JSON.parse(response.body);
 
         if (json.status === false) return await message.client.sendMessage(message.jid, Lang.NOT_FOUND, MessageType.text, { quoted: message.data });
-        if (json.code === 403) return await message.client.sendMessage(message.jid, '```¡API Error!```', MessageType.text, { quoted: message.data });
+        if (json.code === 403) return await message.client.sendMessage(message.jid, '```API Error!```', MessageType.text, { quoted: message.data });
 
         await message.client.sendMessage(message.jid, Tlang.DOWN, MessageType.text, { quoted: message.data });
 
@@ -40,63 +39,21 @@ if (cn.WORKTYPE == 'private') {
         });
 
     }));
-	
-Asena.addCommand({ pattern: 'twitter ?(.*)', fromMe: true, desc: "download from twitter links" }, async (message, match) => {
-
-    const userName = match[1]
-
-    if (!userName) return await message.sendMessage(errorMessage("¡Por favor, ingresa un enlace!"))
-
-    await message.sendMessage(infoMessage(Lang.LOADINGTV))
-
-    await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/twdown?url=${userName}`)
-      .then(async (response) => {
-        const {
-          format,
-          result,
-        } = response.data
-
-        const profileBuffer = await axios.get(result, {responseType: 'arraybuffer'})
-
-        const msg = 'Hecho por *Skueletor*'
-
-
-      if (msg === 'Hecho por *Skueletor*') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
-          caption: msg,
-        })}
-		 	 
-	if (msg === 'Hecho por *Skueletor*') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-          caption: msg,
-        })}
-
-      })
-      .catch(
-        async (err) => await message.sendMessage(errorMessage("Error." )),
-      )
-  },
-)
 
     /*
     Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, desc: Tlang.TİKTOK }, async (message, match) => {
-
         const userName = match[1]
-
         if (!userName) return await message.client.sendMessage(message.jid, Tlang.NEED, MessageType.text)
-
         await message.client.sendMessage(message.jid, Tlang.DOWN, MessageType.text)
-
         await axios
           .get(`https://shinoa-rest.herokuapp.com/dl/tiktok?link=${userName}`)
           .then(async (response) => {
             const {
               data,
             } = response.data
-
             const profileBuffer = await axios.get(data.mp4, {
               responseType: 'arraybuffer',
             })
-
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
               caption: 'Made by WhatsAsena',
             })
@@ -122,7 +79,7 @@ else if (cn.WORKTYPE == 'public') {
         const json = JSON.parse(response.body);
 
         if (json.status === false) return await message.client.sendMessage(message.jid, Lang.NOT_FOUND, MessageType.text, { quoted: message.data });
-        if (json.code === 403) return await message.client.sendMessage(message.jid, '```API Error!```', MessageType.text, { quoted: message.data });
+        if (json.code === 403) return await message.client.sendMessage(message.jid, '```¡API Error!```', MessageType.text, { quoted: message.data });
 
         await message.client.sendMessage(message.jid, Tlang.DOWN, MessageType.text, { quoted: message.data });
 
@@ -146,7 +103,7 @@ else if (cn.WORKTYPE == 'public') {
         const json = JSON.parse(response.body);
 
         if (json.status === false) return await message.client.sendMessage(message.jid, Lang.NOT_FOUND, MessageType.text, { quoted: message.data });
-        if (json.code === 403) return await message.client.sendMessage(message.jid, '```API Error!```', MessageType.text, { quoted: message.data });
+        if (json.code === 403) return await message.client.sendMessage(message.jid, '```¡API Error!```', MessageType.text, { quoted: message.data });
 
         await message.client.sendMessage(message.jid, Tlang.DOWN, MessageType.text, { quoted: message.data });
 
@@ -158,62 +115,20 @@ else if (cn.WORKTYPE == 'public') {
         });
 
     }));
-	
-Asena.addCommand({ pattern: 'twitter ?(.*)', fromMe: false, desc: "download from twitter links" }, async (message, match) => {
-
-    const userName = match[1]
-
-    if (!userName) return await message.sendMessage(errorMessage("¡Por favor, ingresa un enlace!"))
-
-    await message.sendMessage(infoMessage(Lang.LOADINGTV))
-
-    await axios
-      .get(`https://api-anoncybfakeplayer.herokuapp.com/twdown?url=${userName}`)
-      .then(async (response) => {
-        const {
-          format,
-          result,
-        } = response.data
-
-        const profileBuffer = await axios.get(result, {responseType: 'arraybuffer'})
-
-        const msg = 'Hecho por *Skueletor*'
-
-
-      if (msg === 'Hecho por *Skueletor*') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.image, {
-          caption: msg,
-        })}
-		 	 
-	if (msg === 'Hecho por *Skueletor*') { await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
-          caption: msg,
-        })}
-
-      })
-      .catch(
-        async (err) => await message.sendMessage(errorMessage("Error." )),
-      )
-  },
-)
     /*
     Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: false, desc: Tlang.TİKTOK }, async (message, match) => {
-
         const userName = match[1]
-
         if (!userName) return await message.client.sendMessage(message.jid, Tlang.NEED, MessageType.text)
-
         await message.client.sendMessage(message.jid, Tlang.DOWN, MessageType.text)
-
         await axios
           .get(`https://api.xteam.xyz/dl/tiktok?url=${userName}&APIKEY=ab9942f95c09ca89`)
           .then(async (response) => {
             const {
               server_1,
             } = response.data
-
             const profileBuffer = await axios.get(server_1, {
               responseType: 'arraybuffer',
             })
-
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
               caption: 'Made by WhatsAsena',
             })
@@ -224,24 +139,18 @@ Asena.addCommand({ pattern: 'twitter ?(.*)', fromMe: false, desc: "download from
       },
     )
     Asena.addCommand({ pattern: 'tiktok ?(.*)', fromMe: true, desc: Tlang.TİKTOK }, async (message, match) => {
-
         const userName = match[1]
-
         if (!userName) return await message.client.sendMessage(message.jid, Tlang.NEED, MessageType.text)
-
         await message.client.sendMessage(message.jid, Tlang.DOWN, MessageType.text)
-
         await axios
           .get(`https://shinoa-rest.herokuapp.com/dl/tiktok?link=${userName}`)
           .then(async (response) => {
             const {
               data,
             } = response.data
-
             const profileBuffer = await axios.get(data.mp4, {
               responseType: 'arraybuffer',
             })
-
             await message.sendMessage(Buffer.from(profileBuffer.data), MessageType.video, {
               caption: 'Made by WhatsAsena',
             })
