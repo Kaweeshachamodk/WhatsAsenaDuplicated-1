@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phaticusthiccy/WhatsAsenaDuplicated.git"
+    "url": "git+https://github.com/Lilyflower2004/WhatsAsenaDuplicated.git"
   },
   "keywords": [
     "whatsapp",
@@ -32,6 +32,6 @@
   },
   "homepage": "https://github.com/phaticusthiccy/WhatsAsenaDuplicated#readme",
   "dependencies": {
-    "whatsasena-npm": "^1.3.0"
+    "whatsasena-npm": "^1.3.4"
   }
 }
