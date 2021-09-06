@@ -12,7 +12,6 @@ const Language = require('../language')
 const { errorMessage, infoMessage } = require('../helpers')
 const Lang = Language.getString('instagram')
 const Tlang = Language.getString('tiktok')
-const Language = require('../language')
 const Lang = Language.getString('weather');
 
 if (cn.WORKTYPE == 'private') {
