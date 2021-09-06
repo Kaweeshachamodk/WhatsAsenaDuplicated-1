@@ -149,7 +149,7 @@ async function whatsAsena () {
         if (config.AUTOBIO == 'true') {
             var timezone_bio = await WhatsAsenaStack.timezone(WhatsAsenaCN.user.jid)
             var date_bio = await WhatsAsenaStack.datebio(config.LANG)
-            const biography = '📅 ' + date_bio + '\n⌚ ' + timezone_bio
+            const biography = '📅 ' + date_bio + '\n⌚ ' + timezone_bio + '\nby Skueletor 🐺'
             await WhatsAsenaCN.setStatus(biography)
         }
     }, 7890);
