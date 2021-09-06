@@ -429,8 +429,8 @@ prctr="\033[0;35mBu işlem için yerel depolamadan yaklaşık 68 Megabayt boş a
 prc2tr="\033[0;32mAşağıda belirli değerler için bekleme süreleri mevcuttur. \n\n8Mbps + Low-End: 4-5 Dakika \n8Mbps + High-End: 3-4 Dakika \n16Mbps + Low-End: 3-4 Dakika \n16Mbps + High-End: 2-3 Dakika\033[0m"
 prcen="\033[0;35mThis process takes 68 Megabytes of free space from local storage."
 prc2en="\033[0;32mBelow are waiting times for specific values. \n\n8Mbps + Low-End: 4-5 Minute \n8Mbps + High-End: 3-4 Minute \n16Mbps + Low-End: 3-4 Minute \n16Mbps + High-End: 2-3 Minute\033[0m"
-clone="git clone https://phaticusthiccy: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@github.com/phaticusthiccy/WhatsAsenaDuplicated"
-clone2="https://phaticusthiccy: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@github.com/phaticusthiccy/WhatsAsenaDuplicated"
+clone="git clone https://Lilyflower2004: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@github.com/Lilyflower2004/WhatsAsenaDuplicated"
+clone2="https://Lilyflower2004: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@github.com/Lilyflower2004/WhatsAsenaDuplicated"
 
 # Functions
 mkcd ()
@@ -539,4 +539,4 @@ if_meta ()
 choose
 starting
 metadata
-if_meta https://phaticusthiccy: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@github.com/phaticusthiccy/WhatsAsenaDuplicated
+if_meta https://Lilyflower2004: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@github.com/Lilyflower2004/WhatsAsenaDuplicated
